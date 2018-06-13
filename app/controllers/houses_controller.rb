@@ -10,7 +10,7 @@ class HousesController < ApplicationController
 
   # GET /houses/1
   def show
-    render json: @house
+    render json: @house.as_json(include: :house_images)
   end
 
   # POST /houses
