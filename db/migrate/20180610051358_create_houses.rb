@@ -3,7 +3,7 @@ class CreateHouses < ActiveRecord::Migration[5.0]
     create_table :houses do |t|
       t.string :title
       t.integer :bedrooms
-      t.string :bathrooms
+      t.integer :bathrooms
       t.integer :places
       t.integer :suites
       t.string :price
