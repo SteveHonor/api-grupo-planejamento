@@ -26,9 +26,10 @@ ActiveRecord::Schema.define(version: 20180610051521) do
   create_table "houses", force: :cascade do |t|
     t.string   "title"
     t.integer  "bedrooms"
+    t.string   "bathrooms"
     t.integer  "places"
     t.integer  "suites"
-    t.decimal  "price"
+    t.string   "price"
     t.string   "address"
     t.string   "neighborhood"
     t.string   "city"
@@ -37,6 +38,10 @@ ActiveRecord::Schema.define(version: 20180610051521) do
     t.string   "status"
     t.string   "kind"
     t.string   "situation"
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "meters"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

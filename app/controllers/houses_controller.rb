@@ -54,6 +54,7 @@ class HousesController < ApplicationController
       params.require(:house).permit(
         :title,
         :bedrooms,
+        :bathrooms,
         :places,
         :suites,
         :price,
@@ -65,6 +66,10 @@ class HousesController < ApplicationController
         :status,
         :situation,
         :kind,
+        :name,
+        :email,
+        :phone,
+        :meters,
         {
           images: []
         }
