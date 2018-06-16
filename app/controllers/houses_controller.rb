@@ -70,6 +70,7 @@ class HousesController < ApplicationController
         :email,
         :phone,
         :meters,
+        :visits,
         {
           images: []
         }

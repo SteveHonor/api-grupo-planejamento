@@ -25,25 +25,27 @@ ActiveRecord::Schema.define(version: 20180610051521) do
 
   create_table "houses", force: :cascade do |t|
     t.string   "title"
-    t.integer  "bedrooms"
-    t.integer  "bathrooms"
-    t.integer  "places"
-    t.integer  "suites"
+    t.integer  "bedrooms",     default: 0
+    t.integer  "bathrooms",    default: 0
+    t.integer  "places",       default: 0
+    t.integer  "suites",       default: 0
     t.string   "price"
     t.string   "address"
     t.string   "neighborhood"
     t.string   "city"
     t.string   "state"
     t.text     "description"
-    t.string   "status"
+    t.string   "status",       default: "pending"
     t.string   "kind"
     t.string   "situation"
     t.string   "name"
     t.string   "email"
     t.string   "phone"
     t.string   "meters"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "code"
+    t.integer  "visits",       default: 0
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "mail_contacts", force: :cascade do |t|
