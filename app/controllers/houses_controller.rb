@@ -3,7 +3,14 @@ class HousesController < ApplicationController
 
   # GET /houses
   def index
-    @houses = House.all.as_json(include: :house_images)
+    if request.query_parameters.present?
+      params = request.query_parameters
+      params.reject! { |k, v| v.empty? }
+    
+      @houses = House.where(params).as_json(include: :house_images)
+    else
+      @houses = House.all.as_json(include: :house_images)
+    end
 
     render json: @houses
   end
