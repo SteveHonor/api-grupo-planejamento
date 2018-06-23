@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :solars
   resources :house_images
   resources :houses
   namespace :mail do

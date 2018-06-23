@@ -1,0 +1,2 @@
+class Solar < ApplicationRecord
+end
