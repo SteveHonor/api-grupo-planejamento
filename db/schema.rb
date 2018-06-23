@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20180622215017) do
     t.string   "zip_code"
     t.string   "place"
     t.string   "current_price"
+    t.string   "status"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

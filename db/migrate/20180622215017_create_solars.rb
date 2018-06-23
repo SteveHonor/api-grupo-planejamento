@@ -7,6 +7,7 @@ class CreateSolars < ActiveRecord::Migration[5.0]
       t.string :zip_code
       t.string :place
       t.string :current_price
+      t.string :status
 
       t.timestamps
     end

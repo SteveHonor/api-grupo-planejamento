@@ -51,14 +51,15 @@ class SolarsController < ApplicationController
 
   def modules
     if solar_params[:current_price].to_f > 126.96
-      return ((solar_params[:current_price].to_f-50*0.7)*1000) / (30*3.68*solar_params[:current_price].to_f*310)
+      result = ((solar_params[:current_price].to_f - 50 * 0.7)*1000) / (30*3.68*0.7*310)
+      return result.ceil
     else
       return 5
     end
   end
 
   def power
-    modules * 310 / 1000
+    (modules * 310) / 1000.to_f
   end
 
   def area
@@ -66,7 +67,7 @@ class SolarsController < ApplicationController
   end
 
   def estimated_monthly_energy
-    power * 30 * 3.68
+    (power * 30 * 3.68).round(2)
   end
 
   def system_price
@@ -74,16 +75,16 @@ class SolarsController < ApplicationController
   end
 
   def percentage_savings
-    estimated_monthly_energy * 0.70 / solar_params[:current_price].to_f * 100
+    (estimated_monthly_energy * 0.30 / solar_params[:current_price].to_f * 100).ceil
   end
 
   def value_saving
-    estimated_monthly_energy * 0.70
+    (estimated_monthly_energy * 0.30)
   end
 
   def energy_bill_after
-    if solar_params[:current_price].to_f - value_saving < 0.70 * 50
-      0.70 * 50
+    if solar_params[:current_price].to_f - value_saving < 0.30 * 50
+      0.30 * 50
     else
       solar_params[:current_price].to_f - value_saving
     end
