@@ -75,16 +75,16 @@ class SolarsController < ApplicationController
   end
 
   def percentage_savings
-    (estimated_monthly_energy * 0.30 / solar_params[:current_price].to_f * 100).ceil
+    (estimated_monthly_energy * 0.67 / solar_params[:current_price].to_f * 100).ceil
   end
 
   def value_saving
-    (estimated_monthly_energy * 0.30)
+    (estimated_monthly_energy * 0.67)
   end
 
   def energy_bill_after
-    if solar_params[:current_price].to_f - value_saving < 0.30 * 50
-      0.30 * 50
+    if solar_params[:current_price].to_f - value_saving < 0.67 * 50
+      0.67 * 50
     else
       solar_params[:current_price].to_f - value_saving
     end
