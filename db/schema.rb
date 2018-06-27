@@ -69,12 +69,13 @@ ActiveRecord::Schema.define(version: 20180622215017) do
     t.string   "name"
     t.string   "email"
     t.string   "phone"
-    t.string   "zip_code"
+    t.string   "state"
     t.string   "place"
     t.string   "current_price"
+    t.string   "connection_type"
     t.string   "status"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_foreign_key "house_images", "houses"
